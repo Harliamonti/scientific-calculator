@@ -4,7 +4,14 @@
 
 int main()
 {
-    std::string input{"1 + 2 * 4"};
+    std::string input{"1+2*4"};
     std::queue <int> operands {}; 
     std::queue <char> operators {};
+
+    int num{};
+
+    for (auto it{input.begin()}; it != input.end(); it++)
+    {
+        std::cout << "Test" << ++num << std::endl;
+    }
 }
