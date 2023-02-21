@@ -33,18 +33,18 @@ namespace calc
         return lhs * rhs;
     }
 
-    // template <typename T, typename U, typename RT = std::common_type<T, U>>
-    // RT doOperation(T lhs, U rhs, RT (*func)(T arg1, U arg2))
-    // {
-    //     return func(lhs, rhs);
-    // }
+    template <typename T, typename U, typename RT = std::common_type_t<T, U>>
+    RT doOperation(T lhs, U rhs, RT (*func)(T arg1, U arg2))
+    {
+        return func(lhs, rhs);
+    }
     
-    //wont work, rather use an object
-
 }
 int main()
 {
     int a{ 14 }, b{ 16 };
+    float c{ 16.26 };
 
+    std::cout <<calc::doOperation(a, c, calc::add) << std::endl;
     std::cout << calc::add(1, 7.5);
 }
