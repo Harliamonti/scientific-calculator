@@ -33,6 +33,7 @@ namespace calc
         return lhs * rhs;
     }
 
+    // template <typename T, typename U, typename RT = std::common_type_t<T, U>> This works as well but make sure to include the "_t"!
     template <typename T, typename U, typename RT = typename std::common_type<T, U>::type>
     RT doOperation(T lhs, U rhs, RT (*func)(T arg1, U arg2))
     {
