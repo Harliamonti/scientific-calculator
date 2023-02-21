@@ -39,6 +39,9 @@ namespace calc
         return func(lhs, rhs);
     }
     
+    // The thing is that we need to define T, T1 and RT constantly.
+    // Within an object this wouldn't be a problem as they would be "global"
+
 }
 int main()
 {
